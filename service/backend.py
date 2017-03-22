@@ -21,6 +21,7 @@ def calc():
         return json.dumps({'Rx': tupilize(Rx), 't':tupilize(t)})
     else:
         return 400
-
+'''
 if __name__ == '__main__':
     app.run(port=8000)
+'''
