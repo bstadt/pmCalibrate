@@ -4,16 +4,16 @@ sys.path.append('./static/')
 import json
 import numpy as np
 
-from flask import Flask, request
+from flask import Flask, request, render_template
 from axxb import axxb, tupilize
 
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    return 'Home page is under construction'
+    return render_template('index.html')
 
-@app.route('/calc', methods = ['GET', 'POST'])
+@app.route('/calc', methods = ['POST'])
 def calc():
     if request.method == 'POST':
         jsonObj = json.loads(request.data)
