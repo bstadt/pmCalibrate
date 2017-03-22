@@ -9,11 +9,11 @@ from axxb import axxb, tupilize
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
     return 'Home page is under construction'
 
-@app.route('/calc', methods = ['POST'])
+@app.route('/calc', methods = ['GET', 'POST'])
 def calc():
     if request.method == 'POST':
         jsonObj = json.loads(request.data)
