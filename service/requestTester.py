@@ -1,6 +1,7 @@
 import numpy as np
 import json
 import requests
+import sys
 
 if __name__ == '__main__':
     Qee =((0.504,-0.082,0.371,0.141,0.737,-0.124,0.649),
@@ -25,7 +26,13 @@ if __name__ == '__main__':
                         (-0.093,-0.081,0.434,-0.321,-0.367,0.701,0.521),
                         (-0.002,-0.047,0.515,-0.259,-0.272,0.749,0.546))
 
-    response = requests.post('http://127.0.0.1:8000/calc', data=json.dumps({'Qee':Qee, 'Qmarker':QMarker}))
+    response = None
+
+    if len(sys.argv)>1 and sys.argv[1] == '-l':
+        response = requests.post('http://127.0.0.1:8000/calc', data=json.dumps({'Qee':Qee, 'Qmarker':QMarker}))
+    else:
+        response = requests.post('http://park-martin-calibrate.herokuapp.com/calc', data=json.dumps({'Qee':Qee, 'Qmarker':QMarker}))
+
     responseObj = json.loads(response.text)
     print responseObj['Rx']
     print responseObj['t']
