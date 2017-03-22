@@ -1,5 +1,5 @@
 import sys
-sys.path.append('../')
+sys.path.append('./static/')
 
 import json
 import numpy as np
