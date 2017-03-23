@@ -21,7 +21,7 @@ Data:
               [qx, qy, qz, qw, x, y, z],
               ...
               [qx, qy, qz, qw, x, y, z]
-             ],
+             ]
 }
 ```
 Where: **qx, qy, qz, qw** are quaternian rotation values, and **x, y, z** are translation values.
