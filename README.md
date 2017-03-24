@@ -5,7 +5,7 @@ It utilizes the Park and Martin method for solving Ax=xB on the Euclidean group 
 ## Request Format
 Request Type: **POST**
 
-Endpoint: **http://park-martin-calibrate.herokuapp.com**
+Endpoint: **http://park-martin-calibrate.herokuapp.com/calc**
 
 Data:
 ```python
